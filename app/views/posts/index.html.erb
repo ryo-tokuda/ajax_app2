@@ -1,8 +1,11 @@
 <h1>Ajax_App *非同期通信機能の実装*</h1>
-<%= form_with url: "/posts" , method: :post,id: "form" do |f|%>
-   <%= f.text_field :content%>
+<%= form_with url: "/posts" , method: :post, id:"form" do |f|%>
+   <%= f.text_field :content , id: "content"%>
    <%= f.submit '投稿する' , id: "submit"%>
 <% end %>
+
+<div id="list">
+</div>
 
 <% @posts.each do |post| %>
    <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>

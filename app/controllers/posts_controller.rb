@@ -5,12 +5,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    post= Post.create(content: params[:content],checked: false)
-    render jason:( post: post)
+    post= Post.create(content: params[:content], checked: false)
+    render json:{ post: post}
   end
 
   def checked
-
     post = Post.find(params[:id])
     if post.checked then
       post.update(checked: false)
